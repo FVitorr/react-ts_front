@@ -20,9 +20,17 @@ export const MidBody=styled.div`
   flex-direction:column;
   align-items:center;
   /* justify-content:center;*/
+  >h1{
+    margin:7rem 0 0;
+    
+  }
   >p{
     margin-top:2rem;
     width:90%;
+  }
+
+  @media (max-width: 912px) {
+    display:none;
   }
 `
 
@@ -33,4 +41,8 @@ export const IFooter=styled.div`
 
   width:90%;
   margin: 1rem 0; 
+  >span{
+    display:flex;
+    gap:5px;
+  }
 `;

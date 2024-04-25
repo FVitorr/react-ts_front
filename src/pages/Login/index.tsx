@@ -4,8 +4,40 @@ import Body from "../../components/Body"
 import { Container,MidBody,IFooter } from "./styles";
 import Content from "../../components/Content";
 import Button from "../../components/Button";
+import Span from "../../components/Span"
+
+import React, { useState } from 'react';
+import { isValidEmail } from '../../utils/emailValidator';
+import { Password } from "styled-icons/fluentui-system-filled";
+import { isValidPassword } from "../../utils/passwordValidator";
 
 const Login = ()=>{
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isValidemail, setisValidEmail] = useState(true);
+  const [isValidpassword, setisValidpassword] = useState(true);
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+    setisValidEmail(true);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+    setisValidpassword(true)
+  };
+
+  const handleSubimit = () =>{
+    if (!isValidEmail(email)){
+      setisValidEmail(false);
+    }
+    if (!isValidPassword(email)){
+      setisValidpassword(false);
+    }
+    return;
+  }
+
+
   return(<>
   <Container>
   <Body>
@@ -20,10 +52,16 @@ const Login = ()=>{
     <Content>
       <h2>Login to your account</h2>
       <span>Don´t have an account ? <a href="/">Sing up free !</a></span>
-      <Input placeholder={"Username"} text={"E-mail:"} type={"text"}/>
-      <Input placeholder={"Password"} text={"Password:"} type={"password"}/>
-      <IFooter> <span><input type="checkbox"/> Remember me</span> Forgot password ?</IFooter>
-      <Button>Login</Button>
+      <Input text={"Email:"} placeholder={"example@example.com"}  type={"email"} value={email} handleChange={handleEmailChange}/>
+      <Span content="Email Invalido" isVisible = {!isValidemail}/>
+
+      <Input text={"Password:"} placeholder={"Password"}  type={"password"} value={password} handleChange={handlePasswordChange}/>
+
+      <Span content="Senha Invalido: Use Simbolos,Letras e Numeros" isVisible = {!isValidpassword}/>
+
+      <IFooter> <span><input type="checkbox"/> 
+      Remember me</span> <a href="/">Forgot password ?</a></IFooter>
+      <Button onclick = {handleSubimit}>Login</Button>
     </Content>
   </Body>
   </Container>

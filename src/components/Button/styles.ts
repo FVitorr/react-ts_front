@@ -7,6 +7,6 @@ export const Container = styled.button`
   align-items:center;
   justify-content:center;
   font-size:16px;
-  background-color:purple;
+  background-color:#442F99;
   color:white;
 `;
