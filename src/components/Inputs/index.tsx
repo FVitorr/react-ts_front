@@ -6,11 +6,12 @@ interface InputProps {
   type: string;
   value: string;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  customStyles?: React.CSSProperties
 }
 
-const Input = ({text, placeholder, type, value, handleChange}: InputProps)=>{
+const Input = ({text, placeholder, type, value, handleChange, customStyles}: InputProps)=>{
   return(<>
-   <Container>
+   <Container style={customStyles}>
     <h3>{text}</h3>
     <input type={type} placeholder ={placeholder} value={value} onChange={handleChange} />
    </Container>

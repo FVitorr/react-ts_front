@@ -1,7 +1,7 @@
 
 import Input from "../../components/Inputs";
 import Body from "../../components/Body"
-import { Container,MidBody,IFooter } from "./styles";
+import { Container,MidBody,IFooter,Section } from "./styles";
 import Content from "../../components/Content";
 import Button from "../../components/Button";
 import Span from "../../components/Span"
@@ -11,7 +11,7 @@ import { isValidEmail } from '../../utils/emailValidator';
 import { Password } from "styled-icons/fluentui-system-filled";
 import { isValidPassword } from "../../utils/passwordValidator";
 
-const Login = ()=>{
+const Register = ()=>{
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isValidemail, setisValidEmail] = useState(true);
@@ -50,22 +50,31 @@ const Login = ()=>{
       </p>
     </MidBody>
     <Content>
-      <h2>Login to your account</h2>
-      <span>Don´t have an account ? <a href="/register">Sing up free !</a></span>
-      <Input text={"Email:"} placeholder={"example@example.com"}  type={"email"} value={email} handleChange={handleEmailChange}/>
-      <Span content="Email Invalido" isVisible = {!isValidemail}/>
-
+      <h2>Register to your account</h2>
+      <span>Do have an account ? <a href="/">Sing-up !</a></span>
+      <Input text={"Email:"} placeholder={"exemple@example.com.br"}  type={"email"} value={email} handleChange={handleEmailChange}/>
       <Input text={"Password:"} placeholder={"Password"}  type={"password"} value={password} handleChange={handlePasswordChange}/>
+      <Section>
+        <Input text={"Name:"} placeholder={"Full Name"}  type={"text"} value={password} handleChange={handlePasswordChange}
+        customStyles={{ width: "45%" }}/>
+        <Input text={"Birthday:"} placeholder={""}  type={"date"} value={email} handleChange={handleEmailChange}
+        customStyles={{ width: "50%" }}/>
+      </Section>
+      <Section>
+        <Input text={"Phone:"} placeholder={"Full Name"}  type={"tel"} value={password} handleChange={handlePasswordChange} customStyles={{ width: "45%" }}/>
+        <Input text={"Country:"} placeholder={"Brasil"}  type={"text"} value={password} handleChange={handlePasswordChange}
+        customStyles={{ width: "50%" }}/>
+      </Section>
 
       <Span content="Senha Invalido: Use Simbolos,Letras e Numeros" isVisible = {!isValidpassword}/>
 
       <IFooter> <span><input type="checkbox"/> 
-      Remember me</span> <a href="/">Forgot password ?</a></IFooter>
-      <Button onclick = {handleSubimit}>Login</Button>
+      Lorem Ipsum </span> <a href="/">Help ?</a></IFooter>
+      <Button onclick = {handleSubimit}>Register</Button>
     </Content>
   </Body>
   </Container>
   </>);
 }
 
-export default Login;
+export default Register;

@@ -51,3 +51,11 @@ export const IFooter=styled.div`
     gap:5px;
   }
 `;
+
+export const Section = styled.div`
+
+  display:flex;
+  width:90%;
+  align-items:center;
+  justify-content:space-between;
+`;
