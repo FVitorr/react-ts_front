@@ -77,7 +77,7 @@ Error generating stack: `+o.message+`
     padding-left:0.5rem;
   }
   width:90%;
-`,ln=({text:e,placeholder:t,type:n,value:r,handleChange:l,customStyles:o})=>I.jsx(I.Fragment,{children:I.jsxs(Hy,{style:o,children:[I.jsx("h3",{children:e}),I.jsx("input",{type:n,placeholder:t,value:r,onChange:l})]})}),Es="/assets/login-bg-EClQpL9J.png",Wy=at.div`
+`,ln=({text:e,placeholder:t,type:n,value:r,handleChange:l,customStyles:o})=>I.jsx(I.Fragment,{children:I.jsxs(Hy,{style:o,children:[I.jsx("h3",{children:e}),I.jsx("input",{type:n,placeholder:t,value:r,onChange:l})]})}),Es="/react-ts_front/assets/login-bg-EClQpL9J.png",Wy=at.div`
   width:70vw;
   height:80vh;
   border-radius:20px;
