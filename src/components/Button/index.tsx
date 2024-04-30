@@ -1,11 +1,17 @@
 import { Container } from "./styles";
+import { MouseEventHandler, ReactNode } from 'react'; // Importe MouseEventHandler
 
-
-const Button = ({children,onclick})=>{
-  return(<>
-  <Container onClick={onclick}>
-  {children}
-  </Container>
-  </>)
+interface ButtonProps {
+  children: ReactNode;
+  onClick: MouseEventHandler<HTMLButtonElement>; 
 }
+
+const Button = ({ children, onClick }: ButtonProps) => {
+  return (
+    <Container onClick={onClick}>
+      {children}
+    </Container>
+  );
+}
+
 export default Button;

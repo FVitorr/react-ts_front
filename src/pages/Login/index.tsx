@@ -6,9 +6,9 @@ import Content from "../../components/Content";
 import Button from "../../components/Button";
 import Span from "../../components/Span"
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { isValidEmail } from '../../utils/emailValidator';
-import { Password } from "styled-icons/fluentui-system-filled";
+// import { Password } from "styled-icons/fluentui-system-filled";
 import { isValidPassword } from "../../utils/passwordValidator";
 
 const Login = ()=>{
@@ -17,12 +17,12 @@ const Login = ()=>{
   const [isValidemail, setisValidEmail] = useState(true);
   const [isValidpassword, setisValidpassword] = useState(true);
 
-  const handleEmailChange = (event) => {
+  const handleEmailChange = (event :  React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
     setisValidEmail(true);
   };
 
-  const handlePasswordChange = (event) => {
+  const handlePasswordChange = (event :  React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
     setisValidpassword(true)
   };
@@ -51,7 +51,7 @@ const Login = ()=>{
     </MidBody>
     <Content>
       <h2>Login to your account</h2>
-      <span>Don´t have an account ? <a href="/register">Sing up free !</a></span>
+      <span>Don´t have an account ? <a href="/react-ts_front/register">Sing up free !</a></span>
       <Input text={"Email:"} placeholder={"example@example.com"}  type={"email"} value={email} handleChange={handleEmailChange}/>
       <Span content="Email Invalido" isVisible = {!isValidemail}/>
 
@@ -61,7 +61,7 @@ const Login = ()=>{
 
       <IFooter> <span><input type="checkbox"/> 
       Remember me</span> <a href="/">Forgot password ?</a></IFooter>
-      <Button onclick = {handleSubimit}>Login</Button>
+      <Button onClick = {handleSubimit}>Login</Button>
     </Content>
   </Body>
   </Container>

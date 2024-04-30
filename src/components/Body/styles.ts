@@ -17,6 +17,6 @@ export const Container = styled.div`
 
   @media (max-width: 912px) {
     justify-content:center;
-    width:90vw;
+    width:95vw;
   }
 `;

@@ -8,15 +8,15 @@ import Login from './pages/Login/index.jsx'
 import Register from './pages/Register/index.tsx'
 
 const router = createBrowserRouter([{
-  path:"/",
+  path:"/react-ts_front/",
   element: <App/>,
   children: [
     {
-      path:"/",
+      path:"/react-ts_front/",
       element: <Login/>
     },
     {
-      path:"/register",
+      path:"/react-ts_front/register",
       element: <Register/>
     }
   ]
