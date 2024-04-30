@@ -10,29 +10,30 @@ import { useState } from 'react';
 import { isValidEmail } from '../../utils/emailValidator';
 // import { Password } from "styled-icons/fluentui-system-filled";
 import { isValidPassword } from "../../utils/passwordValidator";
+import { Link } from "react-router-dom";
 
 const Login = ()=>{
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isValidemail, setisValidEmail] = useState(true);
-  const [isValidpassword, setisValidpassword] = useState(true);
+  const [isValidemail, setisValidEmail] = useState('');
+  const [isValidpassword, setisValidpassword] = useState('');
 
   const handleEmailChange = (event :  React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
-    setisValidEmail(true);
+    setisValidEmail('');
   };
 
   const handlePasswordChange = (event :  React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
-    setisValidpassword(true)
+    setisValidpassword('')
   };
 
   const handleSubimit = () =>{
     if (!isValidEmail(email)){
-      setisValidEmail(false);
+      setisValidEmail('Invalid email address');
     }
     if (!isValidPassword(email)){
-      setisValidpassword(false);
+      setisValidpassword('Invalid password');
     }
     return;
   }
@@ -51,13 +52,13 @@ const Login = ()=>{
     </MidBody>
     <Content>
       <h2>Login to your account</h2>
-      <span>Don´t have an account ? <a href="/react-ts_front/register">Sing up free !</a></span>
+      <span>Don´t have an account ? <Link to="/react-ts_front/register">Sign up!</Link></span>
       <Input text={"Email:"} placeholder={"example@example.com"}  type={"email"} value={email} handleChange={handleEmailChange}/>
-      <Span content="Email Invalido" isVisible = {!isValidemail}/>
+      <Span content= {isValidemail} isVisible = {true}/>
 
       <Input text={"Password:"} placeholder={"Password"}  type={"password"} value={password} handleChange={handlePasswordChange}/>
 
-      <Span content="Senha Invalido: Use Simbolos,Letras e Numeros" isVisible = {!isValidpassword}/>
+      <Span content={isValidpassword} isVisible = {true}/>
 
       <IFooter> <span><input type="checkbox"/> 
         Remember me</span> <a href="/">Forgot password ?</a>

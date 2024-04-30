@@ -8,11 +8,13 @@ export const formatPhone = (phone:string)=> {
   const phoneInit = phone.replace(/\D/g, '');
   if (phone.length <= 12 ){
     const match = phoneInit.match(/^(\d{0,3})(\d{0,5})(\d{0,4})$/);
-    const formattedValue = `(${match[1]}) ${match[2]}-${match[3]}`;
-
-    if (isValidPhone(formattedValue)){
-      return formattedValue;
+    if( match !== null){
+      const formattedValue = `(${match[1]}) ${match[2]}-${match[3]}`;
+      if (isValidPhone(formattedValue)){
+        return formattedValue;
+      }
     }
+
   }
   return phoneInit;
 }

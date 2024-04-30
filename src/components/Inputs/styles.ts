@@ -4,7 +4,9 @@ export const Container = styled.div`
   display:flex;
   flex-direction:column;
   gap:0.5rem;
-  
+  >h3{
+    font-weight:500;
+  }
 
   >input{
     height:28px;

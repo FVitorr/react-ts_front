@@ -5,6 +5,6 @@ export const Container = styled.span`
   flex-direction:row;
   width:90%;
   font-size:12px;
-  font-weight:800;
+  font-weight:400;
   color:red;
 `;

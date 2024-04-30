@@ -14,6 +14,11 @@ export const Container = styled.div`
   gap:0.5rem;
   background-color:white;
 
+  >span{
+    font-size: 13px;
+    margin-bottom:1rem;
+  }
+
   @media (max-width: 912px) {
     width:80%; /* Porcentagem ajustada para telas menores */
     min-width:300px;
@@ -21,10 +26,10 @@ export const Container = styled.div`
     gap: 1rem;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 540px) {
     width:90%; /* Porcentagem ajustada para telas menores */
     min-width:300px;
     margin:0;
-    gap: 1rem;
+    gap: 0rem;
   }
 `;
