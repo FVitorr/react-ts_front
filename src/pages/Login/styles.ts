@@ -50,4 +50,8 @@ export const IFooter=styled.div`
     display:flex;
     gap:5px;
   }
+
+  @media (max-width: 912px) {
+    font-size:12px;
+  }
 `;

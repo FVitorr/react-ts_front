@@ -50,6 +50,11 @@ export const IFooter=styled.div`
     display:flex;
     gap:5px;
   }
+
+  @media (max-width: 912px) {
+    margin: 1rem 0;
+    font-size:12px;
+  }
 `;
 
 export const Section = styled.div`

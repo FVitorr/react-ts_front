@@ -60,7 +60,8 @@ const Login = ()=>{
       <Span content="Senha Invalido: Use Simbolos,Letras e Numeros" isVisible = {!isValidpassword}/>
 
       <IFooter> <span><input type="checkbox"/> 
-      Remember me</span> <a href="/">Forgot password ?</a></IFooter>
+        Remember me</span> <a href="/">Forgot password ?</a>
+      </IFooter>
       <Button onClick = {handleSubimit}>Login</Button>
     </Content>
   </Body>

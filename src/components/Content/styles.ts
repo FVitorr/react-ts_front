@@ -18,11 +18,13 @@ export const Container = styled.div`
     width:80%; /* Porcentagem ajustada para telas menores */
     min-width:300px;
     margin:0;
+    gap: 1rem;
   }
 
   @media (max-width: 500px) {
     width:90%; /* Porcentagem ajustada para telas menores */
     min-width:300px;
     margin:0;
+    gap: 1rem;
   }
 `;
