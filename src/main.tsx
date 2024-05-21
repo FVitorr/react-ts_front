@@ -6,6 +6,7 @@ import './index.css'
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import Login from './pages/Login/index.jsx'
 import Register from './pages/Register/index.tsx'
+import Home from './pages/Home/index.tsx'
 
 const router = createBrowserRouter([{
   path:"/react-ts_front/",
@@ -18,6 +19,10 @@ const router = createBrowserRouter([{
     {
       path:"/react-ts_front/register",
       element: <Register/>
+    },
+    {
+      path:"/react-ts_front/Home",
+      element: <Home/>
     }
   ]
 }])
