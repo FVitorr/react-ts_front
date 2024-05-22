@@ -21,7 +21,7 @@ const router = createBrowserRouter([{
       element: <Register/>
     },
     {
-      path:"/react-ts_front/Home",
+      path:"/react-ts_front/home",
       element: <Home/>
     }
   ]

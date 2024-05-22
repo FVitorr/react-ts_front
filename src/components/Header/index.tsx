@@ -1,12 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Content, Logo, Nav, SelectNav, SendIcon, Input, Addres, BagIcon, ProfileIcon, BagArea, Wrapper, SearchIcon, DownIcon } from "./styles";
+import { Container, Content, Logo, Nav, SelectNav, SendIcon, Input, Addres, BagIcon, ProfileIcon, BagArea, Wrapper, SearchIcon, DownIcon, HFooter, HomeIcon, OrderIcon, CFooter } from "./styles";
+import Modal from "../Modal" 
+
+const iconStyle = {
+  width: '32px',
+  color: 'black'
+}
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isFooter, setIsFooter] = useState(false); // Estado para controlar se é um rodapé fixo
+
+  const [openModal, setOpenModal] = useState (false);
+
 
   const handleResize = () => {
     setIsMobile(window.innerWidth <= 1245); // Define o tamanho da tela para mudar para select
+    setIsFooter(window.innerWidth <= 940);
   };
 
   useEffect(() => {
@@ -20,6 +31,13 @@ const Header = () => {
 
   return (
     <>
+      <Modal isOpen = {openModal} onClose= {() => setOpenModal(false)}>
+        <h2>Onde quer receber seus produtos ?</h2>
+        <Input>
+            <SearchIcon/>
+            <input type="text" placeholder="Busque endereço e numero"/>
+        </Input>
+      </Modal>
       <Container>
         <Content>
           <Logo>
@@ -49,7 +67,7 @@ const Header = () => {
             <SearchIcon/>
             <input type="text" placeholder="Busque por item ou loja"/>
           </Input>
-          <Addres>
+          <Addres onClick = {()=>{setOpenModal(!openModal)}}>
             <p>R. Test, 14</p>
             <DownIcon/>
           </Addres>
@@ -64,6 +82,15 @@ const Header = () => {
             </BagArea>
           </Wrapper>
         </Content>
+        {isFooter ? <HFooter>
+          <CFooter>
+            <span><HomeIcon style={iconStyle}/><p>Start</p></span>
+            <span><SearchIcon style={iconStyle}/><p>Search</p></span>
+            <span><OrderIcon style={iconStyle}/><p>Order</p></span>
+            <span><ProfileIcon style={iconStyle}/><p>Profile</p></span>
+          </CFooter>
+
+        </HFooter> : null}
       </Container>
     </>
   );
