@@ -476,15 +476,26 @@ Error generating stack: `+l.message+`
   font-size:18px;
   letter-spacing:2px;
   gap: 0.5rem;
+
+  @media (max-width: 912px) {
+    font-size:12px;
+  }
 `,dw=K(em)`
   width: 30px;
 `,fw=({children:e})=>S.jsxs(cw,{children:[S.jsx(dw,{}),e]}),pw=K.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  overflow-x:inherit;
   gap:1rem;
   width:80%;
+  min-width:300px;
+  @media (max-width: 912px) {
+    justify-content: space-between;
+    overflow-y:scroll;
+    :-webkit-scrollbar {
+      width: 0px;
+    }
+  }
 `,hw=K.div`
   display:flex;
   flex-direction:column;
@@ -503,4 +514,10 @@ Error generating stack: `+l.message+`
     border-radius:5px;
   }
 
-`,mw=({items:e})=>S.jsx(pw,{children:e.map((t,n)=>S.jsxs(hw,{className:"banner-item",children:[S.jsx("img",{src:t.img,alt:t.text}),S.jsx("p",{children:t.text})]},n))}),vw="/react-ts_front/assets/react-CHdo91hT.svg",gw="/react-ts_front/assets/joias-_ubT7P8H.jpeg",yw="/react-ts_front/assets/roupas-DPJtRYkl.png",ww="/react-ts_front/assets/mercado-C8Cc_QIL.jpeg",xw="/react-ts_front/assets/pets-BqBHymjO.jpeg",Sw=[{text:"Joias",img:gw},{text:"Roupas",img:yw},{text:"Pets",img:xw},{text:"Acessorios",img:vw},{text:"Mercado",img:ww}],Ew=()=>S.jsx(S.Fragment,{children:S.jsxs(M1,{children:[S.jsx(sw,{}),S.jsx($1,{}),S.jsx(fw,{children:"Cupons de frete gratis disponivel !"}),S.jsx(mw,{items:Sw})]})}),kw=ly([{path:"/react-ts_front/",element:S.jsx(wy,{}),children:[{path:"/react-ts_front/",element:S.jsx(N1,{})},{path:"/react-ts_front/register",element:S.jsx(I1,{})},{path:"/react-ts_front/home",element:S.jsx(Ew,{})}]}]);Sa.createRoot(document.getElementById("root")).render(S.jsx(Bn.StrictMode,{children:S.jsx(hy,{router:kw})}));
+  @media (max-width: 912px) {
+    >img{
+      height:60px;
+      width:60px;
+    }
+  }
+`,mw=({items:e})=>S.jsx(pw,{children:e.map((t,n)=>S.jsxs(hw,{className:"banner-item",children:[S.jsx("img",{src:t.img,alt:t.text}),S.jsx("p",{children:t.text})]},n))}),vw="/react-ts_front/assets/joias-_ubT7P8H.jpeg",gw="/react-ts_front/assets/roupas-DPJtRYkl.png",yw="/react-ts_front/assets/mercado-C8Cc_QIL.jpeg",ww="/react-ts_front/assets/pets-BqBHymjO.jpeg",xw="/react-ts_front/assets/acessorios-BfhWe-sL.jpeg",Sw=[{text:"Joias",img:vw},{text:"Roupas",img:gw},{text:"Pets",img:ww},{text:"Acessorios",img:xw},{text:"Mercado",img:yw}],Ew=()=>S.jsx(S.Fragment,{children:S.jsxs(M1,{children:[S.jsx(sw,{}),S.jsx($1,{}),S.jsx(fw,{children:"Cupons de frete gratis disponivel !"}),S.jsx(mw,{items:Sw})]})}),kw=ly([{path:"/react-ts_front/",element:S.jsx(wy,{}),children:[{path:"/react-ts_front/",element:S.jsx(N1,{})},{path:"/react-ts_front/register",element:S.jsx(I1,{})},{path:"/react-ts_front/home",element:S.jsx(Ew,{})}]}]);Sa.createRoot(document.getElementById("root")).render(S.jsx(Bn.StrictMode,{children:S.jsx(hy,{router:kw})}));
