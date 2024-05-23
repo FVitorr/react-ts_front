@@ -8,6 +8,7 @@ import Login from './pages/Login/index.jsx'
 import Register from './pages/Register/index.tsx'
 import Home from './pages/Home/index.tsx'
 
+
 const router = createBrowserRouter([{
   path:"/react-ts_front/",
   element: <App/>,

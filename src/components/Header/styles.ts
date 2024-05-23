@@ -45,17 +45,11 @@ export const Nav = styled.div`
   display:flex; 
   >span{
     margin-left:0.7rem;
-    >p{
+    >a{
       font-weight:400;
       position:relative;
-      border: 1px solid black;
-      ::before{
-        content:"";
-        position:absolute;
-        left:0;
-        right:0;
-        bottom: 0;
-      }
+      text-decoration: none;
+      color: black;
     }
     @media (max-width: 768px) {
       display: none; /* Esconde o Nav em telas pequenas */
@@ -81,22 +75,22 @@ export const SelectNav = styled.div`
   }`;
 
 export const SendIcon = styled(SendPlane)`
-  color:blueviolet;
+  color:#352376;
   width:1.8rem;
 `;
 
 export const ProfileIcon = styled(PersonFill)`
-  color:blueviolet;
+  color:#352376;
   width:32px;
 `;
 
 export const HomeIcon = styled(Home)`
-  color:blueviolet;
+  color:#352376;
   width:32px;
 `;
 
 export const BagIcon = styled(BagFill)`
-  color:blueviolet;
+  color:#352376;
   width:28px;
 `;
 
@@ -146,7 +140,7 @@ export const Addres = styled.div`
 `;
 
 
-export const Wrapper = styled.div`
+export const WrapperBtn = styled.div`
   display:flex;
   gap:1rem;
   height:36px;
